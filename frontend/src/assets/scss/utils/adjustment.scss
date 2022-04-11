@@ -1,0 +1,136 @@
+//Paddings
+.p {
+  
+  //Top
+  &t {
+
+    &-80 {
+      padding-top: rem(80px) !important;
+    }
+
+    &-60 {
+      padding-top: rem(60px) !important;
+    }
+
+    &-40 {
+      padding-top: rem(40px) !important;
+    }
+
+    &-20 {
+      padding-top: rem(20px) !important;
+    }
+
+    &-10 {
+      padding-top: rem(10px) !important;
+    }
+  }
+
+  &b {
+
+    //Bottom
+    &-80 {
+      padding-bottom: rem(80px) !important;
+    }
+
+    &-60 {
+      padding-bottom: rem(60px) !important;
+    }
+
+    &-40 {
+      padding-bottom: rem(40px) !important;
+    }
+
+    &-20 {
+      padding-bottom: rem(20px) !important;
+    }
+
+    &-10 {
+      padding-bottom: rem(10px) !important;
+    }
+  }
+}
+
+//Margins
+.m {
+  
+  //Top
+  &t {
+
+    &-80 {
+      margin-top: rem(80px) !important;
+    }
+
+    &-60 {
+      margin-top: rem(60px) !important;
+    }
+
+    &-40 {
+      margin-top: rem(40px) !important;
+    }
+
+    &-20 {
+      margin-top: rem(20px) !important;
+    }
+
+    &-10 {
+      margin-top: rem(10px) !important;
+    }
+  }
+
+  &b {
+
+    //Bottom
+    &-80 {
+      margin-bottom: rem(80px) !important;
+    }
+
+    &-60 {
+      margin-bottom: rem(60px) !important;
+    }
+
+    &-40 {
+      margin-bottom: rem(40px) !important;
+    }
+
+    &-20 {
+      margin-bottom: rem(20px) !important;
+    }
+
+    &-10 {
+      margin-bottom: rem(10px) !important;
+    }
+  }
+}
+
+//Columns
+.cols {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 rem(-$cols-gutter);
+
+  .col {
+    padding: 0 rem($cols-gutter);
+  }
+
+  &-2 {
+    .col {
+      width: 50%;
+    }
+  }
+
+  &-3 {
+    .col {
+      width: 33.3%;
+    }
+  }
+
+  &-4 {
+    .col {
+      width: 25%;
+    }
+  }
+
+  &.revert {
+    flex-direction: row-reverse;
+  }
+}

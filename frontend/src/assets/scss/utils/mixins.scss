@@ -1,0 +1,112 @@
+/* Mixins:
+  ========================================================================== */
+// Retina
+@mixin retina {
+  @media screen and (-webkit-min-device-pixel-ratio: 1.5),
+    screen and (min-resolution: 144dpi) {
+    @content;
+  }
+}
+
+// Breakpoints, Mobile-first
+@mixin mobile-xs {
+  @media screen and (min-width: $smPhoneWidth) {
+    @content;
+  }
+}
+
+@mixin mobile-s {
+  @media screen and (min-width: $phoneWidth) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $tableWidth) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $smDesktopWidth) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media screen and (min-width: $desktopWidth) {
+    @content;
+  }
+}
+
+// px to rem
+// Fonts
+@function rem($px) {
+  @return $px / 16px + 0rem;
+}
+
+// size to one line
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+//Object Fit
+@mixin object-fit($type) {
+  width: 100%;
+  height: 100%;
+  object-fit: $type;
+}
+
+// Actions
+@mixin center($axis: xy) {
+  position: absolute;
+
+  @if $axis == xy {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @if $axis == x {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  @if $axis == y {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+// placeholder helper
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content;
+  }
+  :-moz-placeholder {
+    @content;
+  }
+  ::-moz-placeholder {
+    @content;
+  }
+  :-ms-input-placeholder {
+    @content;
+  }
+}
+
+//Fonts
+@mixin font($style: 400) {
+  @if $style == 400 {
+    font-family: Roboto ,sans-serif;
+  }
+  @if $style == '400a' {
+    font-family: Arial, sans-serif;
+  }
+}
